@@ -7,7 +7,6 @@ class Solution:
         mapT2S = {}
 
         for charS, charT in zip(s, t):
-            # If the character in s already has a mapping, check if it maps to the correct character in t
             if charS in mapS2T:
                 if mapS2T[charS] != charT:
                     return False
