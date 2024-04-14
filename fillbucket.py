@@ -1,11 +1,11 @@
 import math
 
-def fill_bucket(bucket_capacity, mug_capacity, water_in_mugs):
-    min_mugs = math.ceil(bucket_capacity / mug_capacity)
+def fill_bucket(bucket_capacity, mug_capacities, water_in_mugs):
+    min_mugs = math.ceil(bucket_capacity / max(mug_capacities))
     total_water = 0
     mug_count = 0
 
-    for water in water_in_mugs:
+    for i, water in enumerate(water_in_mugs):
         total_water += water
         mug_count += 1
 
@@ -16,8 +16,15 @@ def fill_bucket(bucket_capacity, mug_capacity, water_in_mugs):
 
 # Example usage
 bucket_capacity = int(input("Enter bucket capacity in litres: "))
-mug_capacity = int(input("Enter mug capacity in litres: "))
+mug_capacities = []
 water_in_mugs = []
+
+print("Enter mug capacities:")
+while True:
+    capacity = input()
+    if capacity == "":
+        break
+    mug_capacities.append(int(capacity))
 
 print("Enter amount of water in each mug:")
 while True:
@@ -26,5 +33,5 @@ while True:
         break
     water_in_mugs.append(int(water))
 
-output = fill_bucket(bucket_capacity, mug_capacity, water_in_mugs)
+output = fill_bucket(bucket_capacity, mug_capacities, water_in_mugs)
 print(output)
