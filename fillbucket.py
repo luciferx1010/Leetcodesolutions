@@ -14,7 +14,7 @@ def fill_bucket(bucket_capacity, mug_capacities, water_in_mugs):
     
     return "Bucket not filled to 80%"
 
-# Example usage
+
 bucket_capacity = int(input("Enter bucket capacity in litres: "))
 mug_capacities = []
 water_in_mugs = []
