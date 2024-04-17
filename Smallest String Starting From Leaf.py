@@ -5,7 +5,7 @@ class Solution:
             if not node:
                 return
             
-            # Append current node's character to the path
+          
             path.append(chr(node.val + ord('a')))
             
             # If it's a leaf node, reverse the path and compare
